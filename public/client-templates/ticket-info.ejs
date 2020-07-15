@@ -1,0 +1,37 @@
+<li data-book-date='<%= data.bookDate%>' data-schedule-no='<%= data.scheduleNo%>' data-reservation-no='<%= data.reservationNo%>'>
+    <div class="row">
+        <div class='col-3'>
+            <img src='<%= data.PosterURL%>' width='100%' alt="">
+            <div class="head-text level3"><%= data.MovieName%></div>
+        </div>
+        <div class="col-9">
+            <div class='head-group' data-color='red' style='padding: 0;border: 1px solid white; margin:3px 0;'>
+                <div class='head-group-highlight'>Movie Schedule</div>
+                <div class='head-group-content' style='padding: 7px 10px;'>
+                    <span class='head-text blk'><strong>Movie Name:</strong> <%= data.MovieName%>  <span class='badge head-text-badge'><%= data.Dimension%></span></span>
+                    <span class='head-text blk'><strong>Branch</strong> <%= data.Branch%></span>
+                    <span class='head-text blk'><strong>Schedule:</strong> Date (<%= data.PlayDate%>) | Time (<%= data.PlayTime%>)</span>
+                    <span class='head-text blk'><strong>Theatre:</strong> <%= data.TheatreName%></span>    
+                    <span class='head-text' style='margin-top: 7px; margin-bottom: 0;'>
+                        <span class='badge head-text-badge'><%= data.Audio%></span>
+                        <span class='badge head-text-badge'><%= data.Genre%></span>
+                        <span class='badge head-text-badge'><%= data.Rate%></span>
+                    </span>
+                </div>
+            </div>
+            <div class='head-group' data-color='red' style='padding: 0;border: 1px solid white; margin:3px 0;'>
+                <div class='head-group-highlight'>Ticket(s)</div>
+                <div class='head-group-content' style='padding: 7px 10px;'>
+                    <%Object.keys(data.SeatList).forEach((className)=>{%>
+                    <div>
+                        <span class='head-text blk'>Class: <%= className%></span>
+                        <%data.SeatList[className].forEach((seatCode)=>{%>
+                            <span class='head-text' style='margin-top: 7px; margin-bottom: 0;'><span class='badge seat-badge'><%= seatCode%></span></span>
+                        <%})%>
+                    </div> 
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>

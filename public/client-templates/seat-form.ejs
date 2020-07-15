@@ -1,0 +1,16 @@
+<div id="SeatForm<%=OpSeatCount%>" class="seatform-tab form-group row" style='padding: 7px!important;'>
+    <label for="SeatClass<%=OpSeatCount%>" class="col-12" style="height:20px;display:flex;justify-content:left;padding-left: 13px;">
+        <span class="badge head-text-badge" style='margin-right:10px;'>Seat Class <%=OpSeatCount%></span>
+        <select name="SeatClass<%=OpSeatCount%>" id="SeatClass<%=OpSeatCount%>" style='max-width:30vw;height: 25px!important;font-size: .6rem;!important' onchange="reRenderSeat()" class="form-control text-white">
+        </select>
+    </label>
+    <div class="col-12">
+        <span style='font-size:.75rem;font-weight:700;margin-right:10px;'>Number of Row(s)</span>
+        <button type="button" onclick="deleteSeatTH(<%=OpSeatCount%>)" class="btn text-center text-white btn-white-rounded m-0 pl-2" style="width: 20px !important; min-width: 0px;" >-</button>
+        <input type="number" class="mt-2 custom-range text-white" readonly="readonly" style="text-align: center;width: 27px; border: 0px;" min="0" value="0" id="NoRow<%=OpSeatCount%>" name="NoRow<%=OpSeatCount%>">
+        <button type="button" onclick="appendSeatTH(<%=OpSeatCount%>)" class="btn text-center text-white btn-white-rounded m-0 pl-2" style="width: 24px !important; min-width: 0px;" >+</button>
+    </div>
+    <div>
+
+    </div>
+</div>

@@ -1,0 +1,130 @@
+    <form id="plan">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class='head-group col-12'>
+                            <span class='head-text level1'>Plan & Theatre Form</span>
+                            <span class='head-text level2'>Create/Edit New Plan For Theatre</span>
+                    </div>
+                </div>
+                <div class="container col-xl-3 col-lg-4 col-md-5 col-sm-5 col-6 ">    
+                    <div class='step-group'>
+                        <div class="head-group small">
+                            <div class='head-text level1'><span class="badge head-text-badge">1</span>Plan</div>
+                            <div class="head-text level2"><i>Specify Plane Name And Dimension Here First</i></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="PlanName">Name</label>
+                            <input type="text" autocomplete="off" class="form-control" id="PlanName" name="PlanName">
+                        </div>
+                        <div class="form-group">
+                            <label for="PlanHeight">Plan Height (>0 Meter)</label>
+                            
+                            <input type="number" onchange="planH()" class="form-control" value="0" min="0" id="PlanHeight" name="PlanHeight">
+                            <label style='display: inline;' for="PlanHeight">(Meter)</label>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="PlanWidth">Plan Width (Max 30 Meter)</label>
+                            <input type="number" onchange="planW()" class="form-control" value="0" min="0" id="PlanWidth" name="PlanWidth">
+                            <label for="PlanWidth">(Meter)</label>
+                            
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="step-group">
+                        <div class="head-group small">
+                            <span class="head-text level1"><span class="badge head-text-badge">2</span>Edit Theatre List</span>
+                        </div>
+                        <table class="table" id="MyTableTr" style="border:0">
+                            <thead>
+                                <tr style="background: white; color:black;">
+                                    <th>List of Theatre Using This Plan</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        
+                        <div class="form-group">
+                            <label for="NameTheatre" >Name</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="NameTheatre" name="NameTheatre">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="TheatreBranch" >Branch</label>
+                            <select name="TheatreBranch" id="TheatreBranch" class="form-control text-white" style="font-size: .7rem; height: 30px !important;"></select>
+                            
+                        </div>
+                        <div class="mx-auto mt-4 text-center">
+                            <button type="button" class="btn-white btn-sm" onclick="saveTheatre()" style="border-radius: 0 !important;">Save Theatre</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="container col-xl-9 col-lg-8 col-md-7 col-sm-7 col-6">
+                    <div class="row">
+                        <!-- seat render area -->
+                        <div class="step-group col-12">
+                            <div class='row'>
+                                <div class='col-12' style='justify-content:center;'>
+                                    <div style='width:100%;min-height:20px;align-item:center;text-align:center;font-size:.7rem;border:1px solid white;border-radius:.4rem;'>Screen</div>    
+                                </div> 
+                                <div class='col-12' style='overflow:auto; min-height: 280px;' id="RenderHeight">
+                                    <div id="render" class="mt-3 mb-3" >
+                                        <div id="render1" class="renderSeatPlan"></div>
+                                        <div id="render2" class="renderSeatPlan"></div>
+                                        <div id="render3" class="renderSeatPlan"></div>
+                                        <div id="render4" class="renderSeatPlan"></div>
+                                    </div>
+                                </div>
+                                <div class='col-12'>
+                                    <div class="container-fluid">
+                                        <p class="default-mouse"><span id="showW" style='font-size: .75rem;'>Plan Width 0 m.</span><span>&emsp;x&emsp;</span>
+                                        <span id="showH" style='font-size: .75rem;'>Plan Height 0 m.</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                        
+                        <!-- seat class form area -->
+                        <div class="step-group col-12">
+                            <div class="btn-toolbar justify-content-between " role="toolbar" aria-label="Toolbar with button groups">
+                                <div class="head-group small" role="group" aria-label="First group" style='width:100%;'>
+                                    <span class="head-text level1" style='text-align:left;'><span class="badge head-text-badge">3</span> Seat Class Arrangement</span>
+                                    
+                                    <span class="head-text level2" style='text-align:left;'>Add/Remove New Seat Class to Plan</span>
+                                    <div class="btn text-white" ><i class="material-icons pointer" onclick="addSeat()">add_circle</i></div>
+                                    <div class="btn text-white"><i class="material-icons pointer" onclick="removeSeat()">remove_circle</i></div>
+                                </div>
+                                
+                            </div>
+                            <div id="adj" style='padding:0!important;'>
+                                
+                            </div>
+                            <div class="input-group">
+                                <button class="btn btn-white btn-outline-light btn-sm" data-popup='seat-class-popup' style="border-radius: 0 !important;" type="button" id="seatClassOption">Available Seat Type</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mx-auto mt-3 text-center">
+                    <button type="button" class="btn btn-white mr-5 btn-outline-light" style="border-radius: 0 !important;" onclick="sentPlanForm()" ><i class="material-icons">add_circle</i><span id="Create">  Save Plan</span></button>
+                    <button type="button" class="btn btn-white btn-outline-light" style="border-radius: 0 !important;" onclick="cancelPlan()">Cancel</button>  
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="scripts/plan.js"></script>
+    

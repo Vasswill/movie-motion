@@ -1,0 +1,53 @@
+<div class="row justify-content-start align-items-center">
+    <div class="col-6" >
+        <div class="head-text level1" style='margin-bottom:5px;font-size: .85rem;font-weight: 900;'>Select info</div>
+        <ul class="open-list mb-0" id="listAnalysisTable" style="margin-left: 10px;">
+            <li class="AnalysisOpt" value="0">Number customer per Branch of Movie</li>
+            <li class="AnalysisOpt" value="1">Number customer per Branch of Genre</li>
+            <li class="AnalysisOpt" value="2">Customer age per Branch of Movie</li>
+            <li class="AnalysisOpt" value="3">Customer age per Branch of Genre</li>
+            <li class="AnalysisOpt" value="4">Total revenue per Branch of Movie</li>
+            <li class="AnalysisOpt" value="5">Total revenue per Branch of Genre</li>
+            <li class="AnalysisOpt" value="6">Total revenue per Branch of Studio</li>
+            <li class="AnalysisOpt" value="7">Total revenue per Week of Branch</li>
+            <li class="AnalysisOpt" value="8">Number customer per Week of Branch</li>
+            <li class="AnalysisOpt" value="9">Number customer per Branch of Weekday</li>
+            <li class="AnalysisOpt" value="10">Number schedule per Branch of Movie</li>
+            <li class="AnalysisOpt" value="11">Number schedule per Branch of Genre</li>
+            <li class="AnalysisOpt" value="12">Number coupon used per Branch of Movie</li>
+            <li class="AnalysisOpt" value="13">Number coupon used per Movie of Branch</li>
+            <li class="AnalysisOpt" value="14">Duration of schedule per Branch of Movie</li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <!-- <ul class="open-list mb-0" id="ResultAnalysis"></ul> -->
+        <div class="col-12">
+            <div class="head-text level1">Select By <span id="SelectBy"></span></div>
+            <select name="ChooseAnalysis" id="ChooseAnalysis" class="form-control text-white mb-2" style="font-size: .8rem; height: 30px!important;"></select>
+        </div>
+        <div class="col-12 stat-showcase">
+            <label>
+                <div class="btn-green">
+                    <div id="AnalyMin"></div>
+                    <div id="unit1"></div>
+                </div>
+                <span>Min</span>    
+            </label>
+            <label>
+                    <div class="btn-green">
+                        <div id="AnalyAvg"></div>
+                        <div id="unit2"></div>
+                    </div>
+                    <span>Avg</span>    
+                </label>
+            <label>
+                <div class="btn-green">
+                    <div id="AnalyMax"></div>
+                    <div id="unit3"></div>
+                </div>
+                <span>Max</span>    
+            </label>
+        </div>
+    </div>
+</div>
+<script src="scripts/analysis.js"></script>

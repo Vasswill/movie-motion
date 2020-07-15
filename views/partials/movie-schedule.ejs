@@ -1,0 +1,171 @@
+<div id="movieForm" name="movieForm" class="container-form">
+        <div class="row">
+                <div class='head-group col-12'>
+                        <span class='head-text level1'>Movie & Schedule Form</span>
+                        <span class='head-text level2'>Insert Movie Info. And Manage Scheduling Below</span>
+                </div>
+                <div class="col-xs-12 col-md-5">
+                        <div class='head-group small'>
+                                <span class='head-text level1'>Movie Information</span>
+                        </div>
+                        
+                        <ul class='open-list white-ol'>
+                                <form >
+                                        <div class="row" style='padding: 0 7px; justify-content:center;'>
+                                                <div class="form-group col-md-6 col-sm-12" style='width: 100%;'>
+                                                        <label for='MovieName' class='head-text level3'>Movie Name</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="MovieName"  name="MovieName"required>
+                                                </div>
+                                                <div class="form-group col-md-6 col-sm-12" style='width: 100%;'>
+                                                        <label for='Director' class='head-text level3'>Director</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="Director" name="Director"required>
+                                                </div>
+                                                <div class="form-group col-12" style='width: 100%;'>
+                                                        <label for='Cast' class='head-text level3'>Casts</l>
+                                                        <textarea autocomplete="off" class="form-control text-white pb-0 text-center" id="Casts"  name="Casts"style="border-radius: .25rem!important;
+                                                        background: #00000014!important;border: 2px solid gray!important;border-color: gray!important;color: black!important;font-size: .8rem;"required></textarea>
+                                                </div>
+        
+                                                <div class="form-group col-12" style='width: 100%;'>
+                                                        <label for='Desc' class='head-text level3'>Description</label>
+                                                        <textarea autocomplete="off" class="form-control text-white pb-0 text-center" id="Desc" name="Desc" style="border-radius: .25rem!important;
+                                                        background: #00000014!important;border: 2px solid gray!important;border-color: gray!important;color: black!important;font-size: .8rem;"required></textarea>
+                                                </div>
+                                                
+                                                <div class="form-group col-md-4 col-sm-6" style='width: 100%;'>
+                                                        <label for='Duration' class='head-text level3'>Duration</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="Duration"  name="Duration"required>
+                                                </div>
+                                                <div class="form-group col-md-4 col-sm-6" style='width: 100%;'>
+                                                        <label for='Rate' class='head-text level3'>Rate</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="Rate"  name="Rate"required>
+                                                </div>
+                                                <div class="form-group col-md-4 col-sm-12" style='width: 100%;'>
+                                                        <label for='Genre' class='head-text level3'>Genre</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="Genre"  name="Genre"required>
+                                                </div>
+                                                <div class="form-group col-12" style='width: 100%;'>
+                                                        <label for='Studio' class='head-text level3'>Studio</label>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="Studio"  name="Studio"required>
+                                                </div>
+                                                
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label for='PosterURL' class='head-text level3'>Poster URL</l>
+                                                        <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="PosterURL"  name="PosterURL"required>
+                                                </div>
+                                        </div>
+                                </form>
+                        </ul>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                        <!-- schedule list -->
+                        <div class='head-group small'>
+                                <span class='head-text level1'>Schedule Bucket</span>
+                                <span class='head-text level2'><i>(Create New Scheduling Below)</i></span>
+                        </div>
+                        <!-- <ul class='open-list' id="schedule-list" style='min-height: 160px;'>
+                                <tr class="list-placeholder"> No Information Yet </li>
+                        </ul> -->
+                        <table class="table sched" id="schedule-list" style="border:none;word-wrap:break-word;">
+                                <thead>
+                                        <tr style="background: white; color:black; font-weight:700; font-size: .7rem;">
+                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Theatre</th>
+                                                <th style='position: sticky;top: 0;background: white'>Date</th>
+                                                <th style='position: sticky;top: 0;background: white'>Time</th>
+                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Audio</th>
+                                                <th class='table-center' style='position: sticky;top: 0;background: white'>3D / 2D</th>
+                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Subtitle</th>
+                                        </tr>
+                                </thead>
+                                <tbody id='Schedule'>
+                                    <tr>
+                                        <td class='table-placeholder' colspan="8">No information yet, select schedule above to see more</td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                </div>
+        </div>
+        <div class="col-12" style='padding: 0;'>
+                <div class='head-group small'>
+                        <span class='head-text level1'>Assign New Schedule(s)</span>
+                </div>
+                <ul class='open-list new-sched-section' style="padding:10px;">  <!-- แก้css -->
+                        <div class="row">
+                                <div class="col-4 order-first " style='margin: 7px 0;'>
+                                        <div class="head-group small">
+                                                <span class='head-text level2' style='opacity: 1;'><span class="badge head-text-badge">1</span>Select branch</span>
+                                                <ul class='open-list' id='Branch' style='min-height: 160px;'></ul>
+                                        </div> 
+                                </div>
+                                <div class="col-3 " style='margin: 7px 0;padding:0;'>
+                                        <div class="head-group small">
+                                                <span class='head-text level2' style='opacity: 1; margin-bottom:5px;'><span class="badge head-text-badge">2</span>Select Theater</span>
+                                                <ul class='open-list' id='theater' style='min-height: 160px;'>
+                                                        <li class="list-placeholder">Please Select Branch</li>
+                                                </ul>
+                                        </div>
+                                        
+                                </div>
+                                <div class="col-md-5 col-sm-12 order-last " style='margin: 7px 0;'>
+                                        <div class="head-group small">
+                                                <span class='head-text level2' style='opacity: 1;'><span class="badge head-text-badge">3</span>Info</span>
+                                        </div>
+                                        
+                                        <ul id="config-list" class='open-list'>
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label >Start Date</label>
+                                                        <input name="DateStart" id="DateStart" class="form-control text-white" type="date"required></input>
+                                                </div>
+                                                
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label >End Date</label>
+                                                        <input name="DateEnd" id="DateEnd" class="form-control text-white" type="date"></input>
+                                                </div>
+                                                
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label >Audio</label>
+                                                        <select name="Audio" id="Audio" class="form-control text-white">
+                                                        <option class="form-control-plaintext" value="Thai">Thai</option>
+                                                        <option class="form-control-plaintext" value="English">English</option>
+                                                        </select>
+                                                </div>
+
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label >Start Time</label>
+                                                        <input type="time" id="datetime24"class="form-control text-white " data-format="HH:mm" data-template="HH : mm" name="StartTime" value="10:30"required>
+                                                </div>
+
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label >Subtitle</label>
+                                                        <select name="SubTitle" id="SubTitle" class="form-control text-white ">
+                                                        <option class="form-control" value="Thai">Thai</option>
+                                                        <option class="form-control" value="English">English</option>
+                                                        </select>
+                                                </div>
+
+                                                <div class="form-group" style='width: 100%;'>
+                                                        <label ><strong>Dimension</strong></label>
+                                                        <select class="form-control text-white" id="Dimension"  name="Dimension">
+                                                                <option class="form-control" value="2D">2D</option>
+                                                                <option class="form-control" value="3D">3D</option>
+                                                        </select>
+                                                </div>
+                                        </ul>
+                                </div>
+                        </div>
+                        <div class="mx-auto mt-4 text-right">
+                                <button type="button" id="addSchedule" value="create"class="btn-white btn-sm">add</button> 
+                        </div>
+                </ul>
+        </div>
+        <div class="mx-auto mt-4 text-center">
+                <button type="button" id="createAllSchedule" value="create"class="btn-white btn-sm">create</button> 
+                <button type="reset" id="cancelAllSchedule" class="btn-white btn-sm">cancel</button> 
+        </div>
+
+
+</div>
+
+
+
+    <script src="scripts/movie.js"></script>

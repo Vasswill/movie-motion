@@ -1,0 +1,61 @@
+
+
+<html>
+    <head>
+        <title>Project Box-office.io</title>
+        <meta http-equiv="pragma" content="no-cache" />
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900|Montserrat:300,400,500,700|Prompt:300,300i,400,400i,500,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/iziToast.min.css">
+        <script src="/scripts/iziToast.min.js" type="text/javascript"></script>
+
+        <script src='scripts/lib.js'></script>
+        <script src="/scripts/ejs_production.js"></script>
+    </head>
+    <body>
+            <script>
+                let auth = !!<%=auth%>;
+                let uRole = <%=auth%>;
+                let data = undefined;
+                <%if(typeof data != 'undefined'){%>
+                    data = <%- JSON.stringify(data) %>;
+                <%}%>
+                console.log(data);
+            </script>
+        <div class="web-body">
+            <div id='top-bar' class="container-fluid">
+                <i class="fas fa-tape logo"></i>
+                <button id='head-login-btn' class='btn-white' data-popup='login-popup'>
+                    <span>Login</span>
+                    <i class="fas fa-user-circle" style="font-size:1.2rem;"></i>
+                </button>
+                <div id='head-user-badge' class="dropdown" style="display:none;">
+                    <button class="btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='width: fit-content;min-width: unset!important;'>
+                        <span class="fetch username"></span>
+                        <img class="fetch userpic" src="" alt="" width="20px" height="20px">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <img class="dropdown-item fetch userpic" src="" alt="" width="100px" height="100px" style='margin:auto;object-fit: cover;width: 100px;height: 100px;padding: initial;'>
+                        <a id='head-pf-btn' class="dropdown-item" data-popup='profile-popup'>Profile</a>
+                        <a class="dropdown-item" data-popup='user-ticket' href="#">Reservations</a>
+                        <button class="btn-red" style='margin: auto;justify-content: center;' onclick="location.href='/logout'">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class='content-box'>
+                <%if(mode==='user'){%>
+                    <%- include sidebar-usermode %> 
+                <%}else{%>
+                    <%- include sidebar-adminmode %>
+                <%}%>
+                <div class="content container-fluid">

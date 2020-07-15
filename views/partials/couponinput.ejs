@@ -1,0 +1,64 @@
+   
+    <div class='col-12 head-group'>
+        <span class='head-text level1'>Coupon Form</span>
+        <span class='head-text level2'>Create & Assign Coupon to Movie and Branch</span>
+    </div>
+    
+    <div class='col-6'>
+        <div class='head-group small'>
+            <span class='head-text level1'><span class="badge head-text-badge">1</span>Coupon Requirement</span>
+        </div>
+        <div style='border:1px dashed rgba(255, 255, 255, 0.11);border-radius: .25rem;'>
+            <div class="form-group input-sm nooms row mb-4">
+                <label for='CouponCode'>Code</label>
+                <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="CouponCode" name="CouponCode" style="font-size: .7rem; height: 25px;" placeholder="Input Coupon Code">
+            </div>
+            
+            <div class="form-group">
+                <label for='DiscountRate'>Discount Rate(%)</label>
+                <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="DiscountRate" name="DiscountRate">
+            </div>
+
+            <div class="form-group">
+                <label for='MaxDiscount'>Max Discount(THB.-)</label>
+                <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="MaxDiscount" name="MaxDiscount">
+            </div>
+
+            <div class="form-group input-sm nooms row mb-4">
+                <label for='ExpireDate'>Expire Date  </label>
+                <input type="date" class="form-control" style="font-size: .7rem; text-align: center; height: 25px;" id="ExpireDate" name="ExpireDate">
+            </div>
+
+            <div class='form-group'>
+                <label for='agegg'>Age  </label>
+                <div class="input-group" id='agegg'>
+                    <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="MinAge" name="MinAge">
+                    <div class="input-gruop-append">
+                        <label class="mt-2 mb-0">To</label>
+                    </div>
+                    <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="MaxAge" name="MaxAge">
+                    <label class="mt-2 mb-0">   Year</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for='MinSeat'>Min Seat  </label>
+                <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="MinSeat" name="MinSeat">
+            </div>
+
+            <div class="form-group">
+                <label for='MinSpend'>Min Spend  </label>
+                <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="MinSpend" name="MinSpend">
+            </div>
+                
+            <div class="form-group">
+                <label for='Number'>Number  </label>
+                <input type="number" class="form-control text-white pb-0 text-center" style="font-size: .7rem; height: 25px;" value="0" min="0" id="Number" name="Number">
+            </div>
+        </div>
+    </div>
+
+    <%- include branchnmovie %> 
+
+
+        

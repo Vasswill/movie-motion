@@ -1,0 +1,174 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="head-group col-12">
+                    <span class="head-text level1">Staff & Shift Form</span>
+                    <span class="head-text level2">Create/Edit Staff For Shift</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="step-group">
+                    <div class="head-group small">
+                        <div class="head-text level1"><span class="badge head-text-badge">1</span>Staff</div>
+                        <div class="head-text level2"><i>Specify infomation about staff here</i></div>
+                    </div>
+                    <form action="/staff" method="post">
+                        <div class="form-group">
+                            <label for="imageURL">Image Link</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="imageURL" name="imageURL" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="firstName" name="firstName" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="middleName">Middle Name</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="middleName" name="middleName">  
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="lastName" name="lastName" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="birthday">Birth Day</label>
+                            <input type="date" autocomplete="off" class="form-control text-white pb-0 text-center" id="birthday" name="birthday">
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="citizenID">Citizen ID</label>
+                            <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center" id="citizenID" name="citizenID" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select name="gender" id="gender" class="form-control text-white pb-0 text-center">
+                                <option class="form-control" value="M">Male</option>
+                                <option class="form-control" value="F">Female</option>
+                                <option class="form-control" value="U">Undenfined</option>
+                            </select>
+                            <div class="col-4"></div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="highestEdu">Highest Education</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="highestEdu" name="highestEdu" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="dateEmployed">Date Employed</label>
+                            <input type="date" autocomplete="off" class="form-control text-white pb-0 text-center" id="dateEmployed" name="dateEmployed" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="address" name="address" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="phonestaff">Phone Number</label>
+                            <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center" id="phonestaff" name="phonestaff" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="marital" >Marital</label>
+                            <select name="marital" id="marital" class="form-control text-white pb-0 text-center">
+                                <option class="form-control" value="1">Single</option>
+                                <option class="form-control" value="2">Engaged</option>
+                                <option class="form-control" value="3">Married</option>
+                                <option class="form-control" value="4">Divorced</option>
+                            </select>
+                            <div class="col-4"></div> 
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" autocomplete="off" class="form-control text-white pb-0 text-center" id="position" name="position" >
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="branchNo" >Branch</label>
+                            <select name="branchNo" id="branchNo" class="form-control text-white pb-0 text-center"></select>
+                        </div>
+            
+                        <!-- <div class="row justify-content-around">
+                                <button type="button" id="next" class="btn btn-white btn-outline-light ">Next</button>
+                                <button type="button" id="cancelStaff" class="btn btn-white btn-outline-light ">Cancel</button>
+                        </div> -->
+                </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="step-group">
+                    <div class="head-group small">
+                        <div class="head-text level1"><span class="badge head-text-badge">2</span>Add Shift Staff</div>
+                    </div>
+    
+                    <div class="mt-5 mb-5">
+                        <table class="table sched-table" style="word-wrap:break-word;table-layout: fixed; margin-bottom: 0px">
+                            <thead>
+                                <tr style="background: white; color:black; font-weight:700; font-size: .7rem;">
+                                    <th class='table-center' style='position: sticky;top: 0;background: white'>Date</th>
+                                    <th class='table-center' style='position: sticky;top: 0;background: white'>Start Time</th>
+                                    <th class='table-center' style='position: sticky;top: 0;background: white'>End Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id='showdatetime'>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="date" >Date</label>
+                        <input type="date" autocomplete="off" class="form-control text-white pb-0 text-center" id="date" name="date">
+                    </div>
+                
+                        <div class="form-group row justify-content-md-center">
+                            <label for="startTime">Start time </label>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n24" id="HHstartTime"  name="HHstartTime" style=" width: 50px;" > 
+                                </div>  
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n60" id="MMstartTime"  name="MMstartTime" style=" width: 50px;">
+                                </div>
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n60" id="SSstartTime"  name="SSstartTime" style=" width: 50px;">
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="form-group row justify-content-md-center">
+                            <label for="endTime">End time </label>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n24" id="HHendTime"  name="HHendTime" style=" width: 50px;" > 
+                                </div>  
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n60" id="MMendTime"  name="MMendTime" style=" width: 50px;">
+                                </div>
+                                <div class="col">
+                                <input type="number" autocomplete="off" class="form-control text-white pb-0 text-center n60" id="SSendTime"  name="SSendTime" style=" width: 50px;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12" style="text-align: center;" >
+                            <button type="button" id="assignShift" class="btn btn-white btn-outline-light ">Assign</button>
+                        </div>
+                        
+                    
+                </div>
+            </div>
+            <div class="col-12 " style="text-align: center;">
+                    <button type="button" id="savedata" class="btn btn-white mr-5 btn-outline-light" >Save</button>
+                    <button type="button" id="cancelStaff" class="btn btn-white btn-outline-light ">Back</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/staff.js"></script>

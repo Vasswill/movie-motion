@@ -1,0 +1,87 @@
+<h3 class='head-text'>Seat Class</h3>
+<div class="row justify-content-start align-items-center">
+    <div class="col-4 ml-2">
+        <ul class="open-list" id="listSeatClassTable"></ul>
+    </div>
+    <div class="col-4">
+        <div style="width: 245%">
+            <div class="container-fluid">
+                <form id="SeatClassForm">
+                    <div class="form-group row mb-3">
+                        <label for="Name" class="col-sm-2 mt-2 mb-0">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control text-white pb-0 text-center" autocomplete="off" id="Name" name="Name">
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="Price" class="col-sm-2 mt-2 mb-0">Price</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="number" class="form-control text-white pb-0 text-center" value="0" min="0" id="Price" name="Price"/>
+                                <div class="input-gruop-append">
+                                    <label class="mt-2 mb-0" for="Price">Baht</label>
+                                </div>
+                            </div>        
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="Width" class="col-sm-2 mt-2 mb-0">Width</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="number" class="form-control text-white pb-0 text-center" value="0" min="0" id="Width" name="Width">
+                                <div class="input-gruop-append">
+                                    <label class="mt-2 mb-0" for="Width">cm.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="Height" class="col-sm-2 mt-2 mb-0">Height</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="number" class="form-control text-white pb-0 text-center" value="0" min="0" id="Height" name="Height">
+                                <div class="input-gruop-append">
+                                    <label class="mt-2 mb-0" for="Height">cm.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="Couple" class="col-sm-2 mt-2 mb-0">Couple</label>
+                        <div class="col-sm-8">
+                            <div class="btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary btn-outline-success ml-2">
+                                        <input type="radio" name="Couple" value="1" /> Yes
+                                </label>
+                                <label class="btn btn-secondary btn-outline-danger ml-2 active">
+                                        <input type="radio" name="Couple" value="0"  checked/> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="FreeFood" class="col-sm-2 mt-2 mb-0">FreeFood</label>
+                        <div class="col-sm-8">
+                            <div class="btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary btn-outline-success ml-2">
+                                        <input type="radio" name="FreeFood" value="1"/> Yes
+                                </label>
+                                <label class="btn btn-secondary btn-outline-danger ml-2 active">
+                                        <input type="radio" name="FreeFood" value="0" checked/> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-md-center mt-5">
+    <div class="col-2">
+        <button id="CreateSeatClass" type="button" class="btn btn-white btn-outline-light" style="border-radius: 0 !important;"><i class="material-icons">add_circle</i><span>  Create</span></button>
+    </div>
+    <div class="col-2">
+        <button id="popup-close" class="btn btn-white btn-outline-light" style="border-radius: 0 !important;" type="button">Cancle</button>  
+    </div>
+</div>

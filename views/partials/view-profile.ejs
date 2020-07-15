@@ -1,0 +1,119 @@
+<div class="content-view" id='profile-view'>
+    <div class="row">
+        <div class="col-12 head-group" style='padding:5px;'>
+            <div class="head-text level1">Profile Information</div>
+            <div class="head-text level3">Click on fields to edit</div>
+        </div>
+        <div class='col-2'>
+            <label for="" style='font-size: .7rem;text-align: center;'>
+                <img class='fetch userpic' src="" width="100px" height="100px" alt="" title="profile picture">
+                Profile Picture
+            </label>
+        </div>
+        <div class="col-10">
+            <form class='row preventEnter' action="" style='padding: 5px 30px;'>
+                <div class="col-4 form-group">
+                    <label for="fname">First Name</label>
+                    <input readonly class='form-control' type="text" id="fname" name="firstname" required>
+                </div>
+                <div class="col-4 form-group">
+                    <label for="mname">Middle Name</label>
+                    <input readonly class='form-control' type="text" id="mname" name="middlename">
+                </div>
+                <div class="col-4 form-group">
+                    <label for="lname">Last Name</label>
+                    <input readonly class='form-control' type="text" id="lname" name="lastname" required>
+                </div>
+                <div class="col-5 form-group">
+                    <label for="citizen">CitizenID/PassportID</label>
+                    <input readonly class='form-control' type="text" id="citizen" name="citizenID" required>
+                </div>
+                <div class="col-4 form-group">
+                    <label for="bdate">Birth Date</label>
+                    <input readonly class='form-control' type="date" id="bdate" name="birthdate" required>
+                </div>
+                <div class="col-3 form-group">
+                    <label for="gender">Gender</label>
+                    <select disabled class='btn-green pf-gender' name="gender" id="" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="-">Others</option>
+                    </select>
+                </div>
+                <div class="col-4 form-group">
+                    <label for="email">Email</label>
+                    <input readonly type="email" class="form-control" id='email' name="email" required>
+                </div>
+                <div class="col-4 form-group">
+                    <label for="phone">Phone Number</label>
+                    <input readonly type="tel" class="form-control" id='phone' name="phone" required>
+                </div>
+                <div class="col-8 form-group">
+                    <label for="addr">Address</label>
+                    <textarea readonly style='height: 100px!important;' type="text" class="form-control" id='addr' name="addr" rows="20" cols="50" required></textarea>
+                </div>
+                <div class="col-4 form-group">
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="uname">Username</label>
+                            <input readonly type="text" class="form-control" id='uname' name="username" required>
+                        </div>
+                        <div class="col-12 form-group psw-group" style='display: none;'>
+                            <label for="psw">Password</label>
+                            <input readonly type="text" class="form-control" id='psw' name="password" required>
+                        </div>
+                        <div class="col-12 send-group" style='display: none;'>
+                            <div class="row">
+                                <button id='pf-update' class='col-6 btn-green' style='display:-webkit-inline-box;min-width: unset;'>Update</button>
+                                <button id='pf-cancel' class='col-6 btn-red' id='pf-cancel' style='display:-webkit-inline-box;min-width: unset;'>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let thisProfile = $('#profile-view form');
+    thisProfile.validate({
+        ignore: ':hidden, [readonly=readonly], [disabled]'
+    });
+
+    thisProfile.find('.send-group #pf-update').off('click').click(function(e){
+        e.preventDefault();
+        
+        if(!$(this).closest('form').valid()){
+            iziToast.destroy();
+            iziToast.show({
+                title: 'Incomplete! ',
+                icon: 'fas fa-bug',
+                message: 'Please Check All Required Field(s)',
+                position: 'topCenter',
+                color: 'red',
+                close: false
+            });
+            return;
+        }
+        $.ajax({
+            url: '/profile',
+            type: 'UPDATE',
+            data: $(this).closest('form').serialize(),
+            success:function(ticketData){
+                window.location.replace('/');
+            },
+            error:function(jqXhr, textStatus, x){
+                iziToast.destroy();
+                iziToast.show({
+                    title: 'Incomplete! ',
+                    icon: 'fas fa-bug',
+                    message: 'Ticket Reservation Failed ('+x+')',
+                    position: 'topCenter',
+                    color: 'red',
+                    close: false
+                });
+            }
+        });
+    });
+</script>

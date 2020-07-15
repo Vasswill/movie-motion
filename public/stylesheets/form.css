@@ -1,0 +1,54 @@
+@media (min-width: 768px) {
+    .container {
+         width: 750px !important;
+    }
+}
+
+.btn-outline-danger , .btn-outline-success {
+    color: white !important; 
+    border-color: var(--color-ground-black) !important; 
+}
+
+.btn-white-rounded{
+    background: transparent;
+    color: white !important;
+    border: 1px solid white !important;
+    border-radius: 1.5rem !important;
+}
+
+.noom { padding:2px solid #ccc; width:400px; height: 200px; overflow-y: scroll;}
+
+.nooms { padding:2px solid #ccc; width:300px; overflow-y: scroll;}
+
+
+.default-mouse {
+    cursor: default !important;
+}
+
+.pointer {cursor: pointer;}
+
+.material-icons, .icon-text {
+    vertical-align: middle;
+}
+
+#Create{
+    /* font-size: 1rem !important; */
+    vertical-align: middle;
+}
+
+#adj{
+    padding-left: 58px !important;
+}
+
+.btn-white-clean{
+    background: transparent;
+    color: white !important;
+    border: 0px; 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+

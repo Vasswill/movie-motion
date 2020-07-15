@@ -1,0 +1,19 @@
+<% if(typeof mode == "undefined"){ %>
+<div class='col-md-2 col-sm-3 col-xs-6' onclick='<%=onclick %>'>
+    <div class='poster-card'>
+        <img src='<%= data.PosterURL%>' width='100%' alt="">
+    </div>
+    <div class='level2' style='display: flex; justify-content: center'><%= data.MovieName%></div>
+</div>
+<%}else if(mode == 'index-row'){%>
+<div class='poster-card' onclick='<%=onclick%>' data-popup='buy-ticket-popup'>
+    <img src='<%= data.PosterURL%>' alt="">
+</div>
+<%}else if(mode == 'popup-row'){%>
+    <div class='col-4 floating' onclick='<%=onclick %>' style='padding-right: 0;'>
+        <div class='poster-card' style='width: 90%;margin: auto;'>
+            <img src='<%= data.PosterURL%>' width='100%' alt="">
+        </div>
+        <div class='level2' style='display: flex; justify-content: center'><%= data.MovieName%></div>
+    </div>
+<%}%>

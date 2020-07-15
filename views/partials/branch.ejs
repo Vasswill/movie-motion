@@ -1,0 +1,24 @@
+<!-- <%- include('header', {mode: 'admin'});  %> -->
+        <div class="container-form">
+            <span class='head-text'>branch</span>
+            <div class="row">
+                <div class="col-sm-3" ></div>
+                <div class="col-sm-6" >
+                    <form action="/branch" method="post">
+                        <span class='head-text level3'>Name</span><br><input type="text" autocomplete="off" class="form-control-plaintext text-white pb-0 text-center" id="NameBranch"  name="Name"><br>
+                        <span class='head-text level3'>Address</span><br><input type="text" autocomplete="off" class="form-control-plaintext text-white pb-0 text-center" id="Address" name="Address"><br>
+                        <span class='head-text level3'>Phone Number</span><br><input type="text" autocomplete="off" class="form-control-plaintext text-white pb-0 text-center" id="Phone"  name="Phone"><br>
+                        <span class='head-text level3'>Manager</span><br>
+                            <select name="Manager" id="Manager" class="form-control-plaintext text-white"></select>
+                                <br><br>
+                        <input type="submit" name="create" value="create"class="btn btn-white btn-outline-light">
+                        <button class="btn btn-white btn-outline-light" role="button">Reject</button>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+        </div>
+
+        <script src="scripts/branch.js"></script>
+    
+        <!-- <%- include foot %>   -->

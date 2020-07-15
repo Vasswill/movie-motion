@@ -1,0 +1,312 @@
+<div class='content-form' id='reservation-form'>
+    <form class='preventEnter' id='reservation-form-element'>
+        <div class="form-tab row" id='tab0'>
+            <input type="text" id='movieName' name='movieName' class="hide" required>
+            <input type="number" id='movieNo' name='movieNo' class="hide" required>
+            <div class='col-12 head-group' data-color='red'>
+                <span class='tab-head head-text level1'>Select Movie</span>
+                <span class='head-text level2'>Movie & Theatre shown below</span>
+            </div>
+            <div class="col-8 col-xs-12" style="height:fit-content; border-right: 2px dashed;">
+                <button type="button" id='reserv-nshow-movies' data-default-txt='Select Movie' data-default-class='btn-white' class="btn-white" style="width:49%;height:100%;display: inline-flex;"><span>Select Movie</span><i class="fas fa-sort-down"></i></button>
+                <div id='show-theatre-btn' class="dropdown">
+                    <button class="btn-white dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id='reserv-nshow-branch' data-default-class='btn-white dropdown-toggle' data-default-disable='true' data-default-txt='Select Theatre Branch' style="width:49%;display: inline-flex;" disabled><span>Select Theatre Branch</span></button>
+                    <div class="dropdown-menu" id='tab0-dropdown-menu' aria-labelledby="dropdownMenuButton" style='transform: translate3d(0px, 25px, 0px)!important;width: -webkit-fill-available;'>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-xs-12">
+                <button type="button" id='show-schedule-btn' class="btn-red" style="width:100%;display: inline-flex;justify-content: center;" data-default-disable='true' disabled><span>Show Schedule  <i class="fas fa-clock"></i></span></button>
+            </div>
+            <div class="col-12" style='max-height: 60vh;overflow-y: auto;margin-top: 20px;'>
+                <div class='row reserv-render-area' style='margin-top: 10px;'>
+                </div>
+            </div>
+        </div>
+        <div class='form-tab row hide' id='tab1'>
+            <input type="text" id='tab1-branchNo' name='branchNo' class="hide" required>
+            <input type="text" id='tab1-scheduleNo' name='scheduleNo' class="hide" required>
+            <div class='col-12 head-group' data-color='red' style='padding-bottom: 10px;border-bottom: 1px solid #ffffff47;'>
+                <span id='tab1-movieName' class='head-text level1'></span>
+                <span class='head-text level2' style='margin-top: 7px; margin-bottom: 0;'>Description <span class='head-text-badge'></span></span>
+                <div id='tab1-movieDesc' class='head-text level3' style='height: 50px; overflow-y: scroll;'></div>
+            </div>
+            <div class='col-12 row' style='justify-content: left;'>
+                <div class="col-6" style='padding: 7px; margin-bottom: .5rem'>
+                    <span class='head-text level2'>Select Date</span>
+                    <div class="btn-group btn-group-toggle day-toggle" data-toggle="buttons">
+                        <label class="toggle-item btn btn-green active">
+                            <input type="radio" id="option1" autocomplete="off" checked> 
+                            <div>
+                                <span id='today-num'></span><span id='today-mon'></span>
+                            </div>
+                        </label>
+                        <label class="toggle-item btn btn-green">
+                            <input type="radio" id="option2" autocomplete="off"> 
+                            <div>
+                                <span id='tmr-num'></span><span id='tmr-mon'></span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class='col-12 row'>
+                <div class='col-6' style='padding:7px;'>
+                    <span class='head-text level2'>Select Branch</span>
+                    <ul class='open-list' id='tab1-branch-list' style='min-height: 150px;'></ul>
+                </div>
+                <div class='col-6' style='padding:7px;'>
+                    <span class='head-text level2'>Select Schedule</span>
+                    <ul class='open-list' id='tab1-schedule-list'></ul>
+                </div>
+            </div>
+        </div>
+        <div class='form-tab row hide' id='tab2'>
+            <!-- row1 screen and sign -->
+            <div class='col-2' style='font-size: .7rem;'><strong>Theatre</strong></br><span id='tab2-theatreCode' style='text-transform: uppercase;'></span></div>
+            <div class='col-9 row'>
+                <div class='col-12' style='justify-content: center;display: flex;'>
+                    <span><input readonly="readonly" id='ex-seat-dot-disabled' type="checkbox" class='seat-dot-checkbox' disabled><label for='ex-seat-dot-disabled' class='seat-dot'></label><span class="seat-desc">Not Available</span></span>
+                    <span><div class='seat-dot available'></div><span class="seat-desc">Available</span></span>
+                    <span><input readonly="readonly" id='ex-seat-dot-checked' type="checkbox" class='seat-dot-checkbox' checked><label for='ex-seat-dot-checked' class='seat-dot'></label><span class="seat-desc">Selected</span></span>
+                </div>
+                <div class='col-12 screen-symbol'></div>
+            </div>
+            <div class='col-1'></div>
+            <!-- row2 seat render -->
+            <div class='col-12 seat-renderarea'>
+            </div>
+            <!-- row2 selection summary -->
+            <div class='col-12' id='tab2-price-display' style='display:flex;justify-content: space-around;margin-top:15px;'></div>
+            <div class='col-12' id='tab2-class-display' style='display:flex;justify-content: space-around;'></div>
+        </div>
+        <div class='form-tab row hide' id='tab3'>
+            <div class="col-sm-7 col-xs-12" style='padding:0;margin-bottom: 15px;'>
+                <div class="row" style='margin: 0 5px;'>
+                    <div class='head-group col-12' data-color='red' style='padding: 0;border: 1px solid white; margin:3px 0;'>
+                        <div class='head-group-highlight'>Movie Schedule</div>
+                        <div class='head-group-content' style='padding: 7px 10px;'>
+                            <span id='tab3-movieName' class='head-text level1'></span>
+                            <span class='head-text level2'>Branch:<span id='tab3-branchName'></span></span>
+                            <span class='head-text level2'>Schedule: <span id='tab3-time-period'></span> | Theatre:<span id='tab3-theatreCode'></span></span>    
+                            <span class='head-text level2' style='margin-top: 7px; margin-bottom: 0;'><span id='tab3-badge' class='head-text-badge'></span></span>
+                        </div>
+                    </div>
+                    <div class='head-group col-12' data-color='red' style='padding: 0;border: 1px solid white; margin:3px 0;'>
+                        <div class="head-group-highlight">Customer Information</div>
+                        <div class='head-group-content' style='padding: 7px 10px;'>
+                            <input id='tab3-customerNo' type="number" name='customerNo' class='hide' required>
+                            <div id='tab3-login-widget' style='display:none;'>
+                                <div style='display: flex;justify-content: center; align-items: center;'>    
+                                    <div class='head-text level2' style='width:100%;'>Please Login Before Booking</div>
+                                    <button id='tab3-login-btn' class='btn-white close-key' data-popup='login-popup' style='margin: auto;'>
+                                        <span>Login</span>
+                                        <i class="fas fa-user-circle" style="font-size:1.2rem;"></i>
+                                    </button>
+                                    <button id='tab3-signup-btn' class='btn-white close-key' data-popup='signup-popup' style='margin: auto;'>
+                                        <span>Signup</span>
+                                        <i class="fas fa-user-plus" style="font-size:1.2rem;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id='tab3-member-widget' style='display:flex;justify-content: center; align-items: center;'>
+                                <div class='row'>
+                                    <div class='col-3' style='display:flex; justify-content: center; align-items: center;'><img class="fetch userpic" src="" alt="" width="50px" height="50px"></div>
+                                    <div class='col-9'>
+                                        <div class='head-group col-12' style='padding: 7px 10px;'>
+                                            <span class='head-text level2'>Reservation by member:</span>
+                                            <div class='head-text level3'>Name: <span class="fetch userFullName"></span></div>
+                                            <div class='head-text level3'>User: <span class="fetch username"></span></div>
+                                            <div class='head-text level3'>Email: <span class="fetch userEmail"></span></div>    
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                            <input id='tab3-username' type="text" name='username' class='hide' required>
+                            <!-- <div class="form-group">
+                                <label for="ticketing-email">Email</label>
+                                <input class="form-control" type="email" id='ticketing-email' name='userEmail' style='font-size: .7rem;' required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticketing-tele">Telephone No.</label>
+                                <input class="form-control" type="tel" id='ticketing-tele' name='userTele' style='font-size: .7rem;' required>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-5 col-xs-12' style='padding: 0 5px;'>
+                <div class="col-12" style="padding:0;max-height: 42vh;overflow-y: scroll;">
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>Seat No.</th>
+                                <th>Billing Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id='tab3-seat-table'>
+                            <tr class='protect'>
+                                <th class='table-foot' style='vertical-align: middle;white-space: nowrap;background:white;position: sticky;bottom: 0;'>Discount Rate ( <span id='tab3-discount-rate'>0%</span> )</th>
+                                <th class='table-foot' style='text-align: -webkit-center;background:white; position: sticky;bottom: 0;'>
+                                    <div class='row' style='width: 100;text-align: right;'>
+                                        <div class="col-12" style='font-size: .75rem;font-weight: 500;border-bottom: 1px solid darkgray;padding: 1px;'>Subtotal: <span id='tab3-subtotal-price'></span></div>
+                                        <div class="col-12" style='padding: 1px;'>Total: <span id='tab3-total-price'></span></div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='col-12' style='padding: 7px 10px;border: 1px solid white; margin:5px 0;height: fit-content;'>
+                        <div class="form-group">
+                            <label for="ticketing-coupon">Coupon</label>
+                            <input class="form-control" type="text" id='ticketing-coupon' name='coupon' autocomplete="off" style='text-transform: uppercase; font-size: .7rem;'>
+                            <div id='tab3-coupon-status' style='color:red'></div>
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+<script>
+    let ticketingForm = undefined;
+
+    function selectMovie (movieIndex, target){
+        let movie = webState.showingList[movieIndex];
+        $('#movieName').val(movie.MovieName);
+        $('#movieNo').val(movie.MovieNo);
+        $('#reserv-nshow-movies>span').text(movie.MovieName.replace('+',''));
+        if(ticketingForm){
+            ticketingForm.kill();
+            ticketingForm.iterate(0);
+        }
+        if(!ticketingForm) {
+            ticketingForm = new ticketingProcess(
+                $('#reservation-form-element'),
+                webState.temp.schedulesSelection,
+                webState.temp.movieSelection,
+                auth,
+                webState
+            );
+        }
+        
+        $('#reserv-nshow-movies').addClass('btn-green');
+        $('#reserv-nshow-movies').removeClass('btn-white');
+        $('#reserv-nshow-branch').removeAttr("disabled");
+        if(typeof target != 'undefined') {
+            let popupId = target.dataset.popup;
+            if(typeof popupId != 'undefined'){
+                //$('.web-body').trigger('popup-closeAll');
+                if(popupId=='buy-ticket-popup'&&webState.role == 'admin'){
+                    iziToast.show({
+                        position: "topCenter", 
+                        icon: 'fas fa-ban',
+                        title: 'Prohibited!', 
+                        color: 'yellow',
+                        message: 'Admin can\'t book a seat',
+                        close: false
+                    });
+                }else{
+                    $('.web-body').addClass('overlay');
+                    $('#'+popupId).show();
+                }
+            }
+        }
+        webState.temp.movieSelection = movie;
+        $('#reserv-nshow-branch').trigger('select-movie');
+    }
+    function selectTheatreBranch (branchNo){
+        console.log('skeect branch', ticketingForm);
+        let allSchedulesForMovie = webState.temp.schedulesSelection;
+        let movie = webState.temp.movieSelection;
+        allSchedulesForMovie.forEach((schedule)=>{
+            if(schedule.BranchNo == branchNo) webState.temp.branchSelection = {name: schedule.BranchName, id: schedule.BranchNo};
+        });
+        $('#show-schedule-btn').removeAttr("disabled");
+        $('#reserv-nshow-branch span').text(webState.temp.branchSelection.name);
+        $('#reserv-nshow-branch').addClass('btn-green');
+        $('#reserv-nshow-branch').removeClass('btn-white wait');
+        
+        $('#show-schedule-btn').off('click');
+        $('#show-schedule-btn').click(function(){
+            ticketingForm.movie = movie;
+            ticketingForm.schedules = allSchedulesForMovie;
+            ticketingForm.iterate();
+        });
+    }
+    
+    $('#buy-ticket-popup').on('init', function(){
+        $('#reserv-nshow-branch').trigger('reset');
+        $('#reserv-nshow-movies').trigger('reset');
+        $('#reserv-nshow-branch').attr("disabled", true);
+        $('#reserv-nshow-branch+.dropdown-menu').children().remove();
+        if(ticketingForm) ticketingForm.kill();
+        ticketingForm = new ticketingProcess(
+            $(this).find('#reservation-form-element'),
+            webState.temp.schedulesSelection,
+            webState.temp.movieSelection,
+            auth,
+            webState
+        );
+        ticketingForm.iterate(0);
+    });
+
+    $('#buy-ticket-popup').on('show-branch',function(e){
+        $('#reserv-nshow-branch+.dropdown-menu').empty();
+        //$('#buy-ticket-popup').data('schedule', JSON.stringify(schedules));
+        let i = 0;
+        webState.temp.schedulesSelection.forEach((schedule)=>{
+            if($('#reserv-nshow-branch+.dropdown-menu').children().last().text() != schedule.BranchName){
+                $('#reserv-nshow-branch+.dropdown-menu').append("<div class='dropdown-item' onclick='selectTheatreBranch("+schedule.BranchNo+")'>"+schedule.BranchName+"</div>");
+            }
+        });
+    });
+
+    $('#reserv-nshow-movies').click(function(e){
+        $('#show-schedule-btn').trigger('reset');
+        $(this).trigger('reset');
+        $('#reserv-nshow-branch').trigger('reset');
+        $('.reserv-render-area').empty().append('<img src="/assets/images/load_placeholder.svg" style="margin:20px auto;">');
+        webState.renderMoviesGrid($('.program-row'), 'index-row');
+        webState.renderMoviesGrid($('.reserv-render-area'));
+    });
+
+    $("#reserv-nshow-branch").on('select-movie',function(e){
+        $('.reserv-render-area').empty().append('<img src="/assets/images/load_placeholder.svg" style="margin:20px auto;">');
+        $(this).trigger('reset',[false,'wait']);
+        fetchData('schedule',{movieId:webState.temp.movieSelection.MovieNo, date: new Date().toYMD()},(data,err)=>{
+            if(!err){
+                webState.temp.schedulesSelection = data;
+                $('.reserv-render-area').empty();
+                $('#buy-ticket-popup').trigger('show-branch');
+            }else{
+                console.log(err);
+            }
+        });
+    });
+
+    $('#buy-ticket-popup').on('get-theatre-plan', (e, schedule) => {
+        fetchData('plan',{theatreId: schedule.TheatreCode},(data,err)=>{
+            if(!err){
+                let classList = [];
+                for(let i=1; i<=4; i++){
+                    if(data[0]['SeatClass'+i] != null) classList.push(data[0]['SeatClass'+i]);
+                }
+                ticketingForm.temp.planSelection = data[0];
+                fetchData('seatclass',{className: classList},(data,err)=>{
+                    if(!err){
+                        ticketingForm.temp.seatClassForPlan = data;
+                        ticketingForm.worker(2);
+                    }else{
+                        console.log(err);
+                    }
+                });
+            }else{
+                console.log(err);
+            }
+        });
+    });
+</script>

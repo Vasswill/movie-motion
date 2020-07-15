@@ -1,0 +1,79 @@
+<div class="container-fluid">
+        <div class="col order-first">
+                        <span class='head-text level2'>Select branch</span>
+                        <ul class='open-list' id='Branch_add'></ul>
+        </div>
+        <div class="col">
+                        <span class='head-text level2'>Select theater</span>
+                        <ul class='open-list' id='theater_add'></ul>
+        </div>
+        <div class="col order-last">
+                <span class='head-text level2'>Info</span>
+                <ul id="config-list" class='open-list'>
+                        <div class="form-group">
+                                <label ><strong>Start Date</strong></label>
+                                <input name="DateStart" id="DateStart_add" class="form-control-plaintext text-white" type="date"required></input>
+                        </div>
+                        
+                        <div class="form-group">
+                                <label ><strong>End Date</strong></label>
+                                <input name="DateEnd" id="DateEnd_add" class="form-control-plaintext text-white" type="date"></input>
+                        </div>
+                        
+                        <div class="form-group">
+                                <label ><strong>Audio</strong></label>
+                                <select name="Audio" id="Audio_add" class="form-control-plaintext text-white">
+                                <option class="form-control-plaintext" value="Thai">Thai</option>
+                                <option class="form-control-plaintext" value="English">English</option>
+                                </select>
+                        </div>
+
+                        <div class="form-group">
+                                <label ><strong>Start Time</strong></label>
+                                <input type="time" id="datetime24_add"class="form-control-plaintext text-white " data-format="HH:mm" data-template="HH : mm" name="StartTime" value="10:30"required>
+                        </div>
+
+                        <div class="form-group">
+                                <label ><strong>Subtitle</strong></label>
+                                <select name="SubTitle" id="SubTitle_add" class="form-control-plaintext text-white ">
+                                <option class="form-control-plaintext" value="Thai">Thai</option>
+                                <option class="form-control-plaintext" value="English">English</option>
+                                </select>
+                        </div>
+
+                        <div class="form-group">
+                                <label ><strong>Dimension</strong></label>
+                                <select class="form-control-plaintext text-white" id="Dimension_add"  name="Dimension">
+                                        <option class="form-control-plaintext" value="2D">2D</option>
+                                        <option class="form-control-plaintext" value="3D">3D</option>
+                                </select>
+                        </div>
+                        <button type="button" id="addSchedule1" value="create"class="btn btn-white btn-outline-light">add</button>
+                <!-- </ul>
+                <span class='head-text level2'>schedule list</span>
+                <ul class='open-list' id="schedule-list-add"> -->
+                                <table class="table sched" id="schedule-list-add" style="border:none;word-wrap:break-word;">
+                                                <thead>
+                                                        <tr style="background: white; color:black; font-weight:700; font-size: .7rem;">
+                                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Theatre</th>
+                                                                <th style='position: sticky;top: 0;background: white'>Date</th>
+                                                                <th style='position: sticky;top: 0;background: white'>Time</th>
+                                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Audio</th>
+                                                                <th class='table-center' style='position: sticky;top: 0;background: white'>3D / 2D</th>
+                                                                <th class='table-center' style='position: sticky;top: 0;background: white'>Subtitle</th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody id='Schedule'>
+                                                    <tr>
+                                                        <td class='table-placeholder' colspan="8">No information yet, select schedule above to see more</td>
+                                                    </tr>
+                                                </tbody>
+                                        </table>
+        
+                        
+
+                        </ul>
+        </div>
+                <button class="btn btn-outline-light btn-white" id="addAllSchedule">Add_All&emsp;</button>
+                <button class="btn btn-outline-light btn-white" id="CancelNewSchedule">Cancel&emsp;</button>  
+</div>

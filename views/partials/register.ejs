@@ -1,0 +1,116 @@
+<div class="row justify-content-start align-items-center">
+    <div class="container">
+        <form id="RegisterForm">
+            <div id="LoginPart">
+                <div class="form-group row mb-6">
+                    <label for="RegisterUserName" class="col-sm-2 mt-2 mb-0">Username</label>
+                    <div class="col-sm-8">
+                        <input type="text" autocomplete="off" class="form-control-plaintext text-white pb-0 text-center" id="RegisterUserName" name="RegisterUserName">
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterPassword" class="col-sm-2 mt-2 mb-0">Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" autocomplete="off" style="outline: none; border-bottom: 1px solid var(--color-gray);" class="form-control-plaintext text-white pb-0 text-center" id="RegisterPassword" name="RegisterPassword">
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterConPassword" class="col-sm-2 mt-2 mb-0">ConfirmPassword</label>
+                    <div class="col-sm-8">
+                        <input type="password" autocomplete="off" style="outline: none; border-bottom: 1px solid var(--color-gray);" class="form-control-plaintext text-white pb-0 text-center" id="RegisterConPassword" name="RegisterConPassword">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mx-auto mt-3 text-center">
+                        <button type="button" id="NextRegForm" class="btn btn-white btn-outline-light" style="border-radius: 0 !important;">Next</button>  
+                    </div>
+                </div>
+            </div>
+            <div id="CustomerDeatail" style="display: none">
+                <div class="form-group row mb-6">
+                    <label for="RegisterFirstName" class="col-sm-2 mt-2 mb-0">FirstName</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterFirstName" name="RegisterFirstName">
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterMidName" class="col-sm-2 mt-2 mb-0">MidName</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterMidName" name="RegisterMidName">
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterLastName" class="col-sm-2 mt-2 mb-0">LastName</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterLastName" name="RegisterLastName">
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterBirthDay" class="col-sm-2 mt-2 mb-0">BirthDay</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="date" class="form-control-plaintext text-white pb-0 text-center" id="RegisterBirthDay" name="RegisterBirthDay">
+                        </div>        
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterGender" class="col-md-2 col-sm-6 col-6 mt-2 mb-0">Gender</label>
+                    <div class="col-md-10 col-sm-9 col-9">
+                        <select name="RegisterGender" id="RegisterGender" class="form-control-plaintext text-white col-md-9 col-sm-9 col-10">
+                            <option class="form-control-plaintext" value="M">Male</option>
+                            <option class="form-control-plaintext" value="F">Female</option>
+                            <option class="form-control-plaintext" value="O">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterCID" class="col-sm-2 mt-2 mb-0">Citizen/Passport</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterCID" name="RegisterCID">
+                        </div>        
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterPhone" class="col-sm-2 mt-2 mb-0">PhoneNumber</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterPhone" name="RegisterPhone">
+                        </div>        
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterIMG" class="col-sm-2 mt-2 mb-0">Image</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterIMG" name="RegisterIMG">
+                        </div>        
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterAddress" class="col-sm-2 mt-2 mb-0">Address</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <textarea type="text" class="form-control text-white pb-0" id="RegisterAddress" style="height: 100px!important;" name="RegisterAddress"></textarea>
+                        </div>        
+                    </div>
+                </div>
+                <div class="form-group row mb-6">
+                    <label for="RegisterEmail" class="col-sm-2 mt-2 mb-0">Email</label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control-plaintext text-white pb-0 text-center" id="RegisterEmail" name="RegisterEmail">
+                        </div>        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mx-auto mt-3 text-center">
+                        <button type="button" id="BackRegForm" class="btn btn-white btn-outline-light mr-5" style="border-radius: 0 !important;">Back</button>
+                        <button type="button" id="SubRegForm" class="btn btn-white btn-outline-light" style="border-radius: 0 !important;">Submit</button>  
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
